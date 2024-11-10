@@ -15,3 +15,87 @@ function jugar(equipo1: number, equipo2: number, juegaMessi: boolean) {
     if (equipo1 < equipo2) console.log(`Gana FC Dallas`);
 
 }
+
+// ANY --------------------
+let disney: any;
+
+disney = "Star Wars y Marvel"
+console.log(disney);
+
+disney = 15000000000
+console.log(disney);
+
+disney = true
+console.log(disney);
+
+// ARRAYS --------------------
+let arrayNumeros: number[] = [1, 2, 3, 4, 5]
+
+let arrayTexto: string[] = ["HTML", "CSS", "JAVASCRIPT"]
+
+
+arrayTexto.push("TYPESCRIPT")
+arrayTexto[0].indexOf("HTML")
+
+// OBJETOS LITERALES --------------------
+let programador = {
+    nombre: "John Doe",
+    tecnologias: ["HTML", "CSS", "JAVASCRIPT"],
+    tomaMate: true
+}
+
+programador = {
+    nombre: "Ricardo Buenardo",
+    tecnologias: ["C#"],
+    tomaMate: false
+}
+
+console.log(programador)
+
+// TYPE PERSONALIZADO --------------------
+
+type Programador = {
+    nombre: string,
+    tecnologias: string[],
+    tomaMate: boolean | null
+}
+
+let programador1: Programador = {
+    nombre: "John Doe",
+    tecnologias: ["HTML", "CSS", "JAVASCRIPT"],
+    tomaMate: true
+}
+
+let programador2: Programador = {
+    nombre: "Momo",
+    tecnologias: ["Java", "C++"],
+    tomaMate: null
+}
+
+// INTERFACE --------------------
+
+interface IProgramador {
+    nombre: string,
+    tecnologias: string[],
+    tomaMate?: boolean | null
+}
+
+let dev1: Programador = {
+    nombre: "John Doe",
+    tecnologias: ["HTML", "CSS", "JAVASCRIPT"],
+    tomaMate: true
+}
+
+let dev2 = {
+    nombre: "Momo",
+    tecnologias: ["Java", "C++"],
+    tomaMate: null,
+    apellido: "Benavides",
+    recibido: false
+}
+
+function enviarCV( programador: IProgramador){
+    console.log(`Este CV es de ${programador.nombre}`)
+}
+
+enviarCV(dev2)
